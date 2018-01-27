@@ -16,8 +16,8 @@ import static org.junit.Assert.*;
 @RunWith(AndroidJUnit4.class)
 @SmallTest
 public class ItemTest {
-    public static final String DESCRIPTION = "description";
-    public static final String TITLE = "title";
+    private static final String DESCRIPTION = "description";
+    private static final String TITLE = "title";
     private Item item;
 
     @Before
