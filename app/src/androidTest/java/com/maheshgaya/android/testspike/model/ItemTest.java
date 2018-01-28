@@ -8,10 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.List;
-
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 @RunWith(AndroidJUnit4.class)
 @SmallTest
@@ -21,12 +19,12 @@ public class ItemTest {
     private Item item;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         item = new Item();
     }
 
     @Test
-    public void itemIsParceled() throws Exception {
+    public void itemIsParceled() {
         item.setTitle(TITLE);
         item.setDescription(DESCRIPTION);
 
