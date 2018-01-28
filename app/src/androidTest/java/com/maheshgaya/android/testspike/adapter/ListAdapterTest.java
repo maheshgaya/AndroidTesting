@@ -2,18 +2,15 @@ package com.maheshgaya.android.testspike.adapter;
 
 import android.support.test.InstrumentationRegistry;
 import android.support.test.filters.SmallTest;
-import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.maheshgaya.android.testspike.MainActivity;
 import com.maheshgaya.android.testspike.R;
 import com.maheshgaya.android.testspike.model.Item;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -29,14 +26,13 @@ import static org.hamcrest.Matchers.greaterThan;
 @RunWith(AndroidJUnit4.class)
 @SmallTest
 public class ListAdapterTest {
-    public static final RecyclerView recyclerView = new RecyclerView(InstrumentationRegistry.getTargetContext());
-    @Rule
-    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
+    private RecyclerView recyclerView;
     private ListAdapter<Item> adapter;
 
     @Before
     public void setUp() {
         adapter = new ListAdapter<>(R.layout.layout_item, getList());
+        recyclerView = new RecyclerView(InstrumentationRegistry.getTargetContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(InstrumentationRegistry.getTargetContext()));
         recyclerView.setAdapter(adapter);
         recyclerView.measure(View.MeasureSpec.AT_MOST, View.MeasureSpec.AT_MOST);
