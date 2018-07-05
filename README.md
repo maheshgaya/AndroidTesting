@@ -1,4 +1,4 @@
-# TestSpike
+# Android Testing
 
 Testing in Android is a challenge. This is my quest for learning all about it.
 
